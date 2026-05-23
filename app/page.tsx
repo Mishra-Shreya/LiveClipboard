@@ -26,14 +26,14 @@ export default function HomePage() {
   };
 
   return (
-    <main className="min-h-screen bg-gradient-to-br from-emerald-50 via-white to-sky-50 p-6">
+    <main className="min-h-screen p-6">
       <div className="mx-auto flex min-h-screen max-w-6xl items-start">
-        <div className="mt-6 grid w-full gap-8">
+        <div className=" grid w-full gap-8">
           <section className="flex flex-col justify-center">
-            <div className="mb-4 inline-flex w-fit items-center gap-2 rounded-full border border-emerald-200 bg-white px-4 py-2 text-sm font-medium text-emerald-700 shadow-sm">
+            {/* <div className="mb-4 inline-flex w-fit items-center gap-2 rounded-full border border-emerald-200 bg-white px-4 py-2 text-sm font-medium text-emerald-700 shadow-sm">
               <span>📋</span>
-              <span>Live shared clipboard</span>
-            </div>
+              <span>Live Clipboard</span>
+            </div> */}
 
             <h1 className="max-w-xl text-5xl font-black tracking-tight text-slate-900 md:text-6xl">
               Share text, emojis, and ideas in real time ✨
@@ -67,7 +67,7 @@ export default function HomePage() {
                     value={roomId}
                     onChange={(e) => setRoomId(e.target.value)}
                     placeholder="Enter room code"
-                    className="flex-1 rounded-xl border border-slate-900 px-4 py-3 text-slate-700 outline-none transition focus:border-emerald-500"
+                    className="flex-1 rounded-xl border border-slate-200 px-4 py-3 text-slate-700 outline-none transition focus:border-emerald-500"
                   />
                   <button
                     onClick={joinRoom}

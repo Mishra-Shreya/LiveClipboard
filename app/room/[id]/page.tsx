@@ -112,7 +112,7 @@ export default function RoomPage() {
 
   if (!roomId || roomId === "undefined") {
     return (
-      <main className="min-h-screen flex items-center justify-center  p-6 bg-gradient-to-br from-emerald-50 via-white to-sky-50">
+      <main className="min-h-screen flex items-center justify-center  p-6 ">
         <div className="rounded-2xl border bg-white p-6 shadow-sm">
           <h1 className="text-xl font-bold">Invalid room</h1>
           <p className="mt-2 text-slate-600">
@@ -126,8 +126,7 @@ export default function RoomPage() {
   return (
     <main className="min-h-screen bg-gradient-to-br from-emerald-50 via-white to-sky-50 p-6">
       <div className="mx-auto flex max-w-4xl flex-col gap-6">
-        <div className="rounded-3xl border border-slate-200 bg-white p-6 shadow-sm">
-          <div className="flex flex-col gap-4 md:flex-row md:items-start md:justify-between">
+        <div className="rounded-3xl border border-slate-200 bg-white p-6 shadow-sm flex flex-row gap-4 items-start justify-between">
             <div>
               <p className="text-sm font-medium text-slate-500">Room</p>
               <h1 className="mt-1 text-3xl font-bold tracking-tight text-slate-900">
@@ -150,42 +149,91 @@ export default function RoomPage() {
               </p>
             </div>
 
-            <div className="flex flex-col gap-2 sm:flex-row">
+            <button
+              onClick={handleCopyRoomLink}
+              className="rounded-xl border-slate-100 bg-white p-2.5 text-slate-700 transition hover:bg-emerald-50 hover:text-emerald-600"
+              title="Share Room"
+            >
+              <IoMdShare size={18} />
+            </button>
+        </div>
+
+        <div className="relative rounded-3xl border border-slate-200 bg-white p-6 shadow-sm">
+          
+
+          {/* <div className="mb-4 flex items-center justify-between">
+            <label className="text-xl font-medium text-slate-700">
+              Shared Clipboard
+            </label>
+
+            <div className="flex items-center gap-2">
               <button
                 onClick={handleCopyRoomLink}
-                className="mt-3 rounded-2xl bg-emerald-500 px-6 py-4 text-base font-semibold text-white shadow-lg shadow-emerald-200 transition hover:-translate-y-0.5 hover:bg-emerald-600"
+                className="rounded-xl border border-slate-200 bg-white p-2.5 text-slate-700 shadow-sm transition hover:bg-emerald-50 hover:text-emerald-600"
+                title="Share Room"
               >
-                <IoMdShare />
+                <IoMdShare size={18} />
               </button>
 
               <button
                 onClick={handleCopyClipboardContent}
-                className="mt-3 rounded-2xl bg-emerald-500 px-6 py-4 text-base font-semibold text-white shadow-lg shadow-emerald-200 transition hover:-translate-y-0.5 hover:bg-emerald-600"
+                className="rounded-xl border border-slate-200 bg-white p-2.5 text-slate-700 shadow-sm transition hover:bg-emerald-50 hover:text-emerald-600"
+                title="Copy Clipboard"
               >
-                <LuCopy />
+                <LuCopy size={18} />
               </button>
 
               <button
                 onClick={handleClear}
-                className="mt-3 rounded-2xl bg-emerald-500 px-6 py-4 text-base font-semibold text-white shadow-lg shadow-emerald-200 transition hover:-translate-y-0.5 hover:bg-emerald-600"
+                className="rounded-xl border border-slate-200 bg-white p-2.5 text-slate-700 shadow-sm transition hover:bg-rose-50 hover:text-rose-600"
+                title="Clear Clipboard"
               >
-                <MdRefresh />
+                <MdRefresh size={18} />
               </button>
             </div>
           </div>
-        </div>
-
-        <div className="rounded-3xl border border-slate-200 bg-white p-6 shadow-sm">
-          <label className="mb-3 block text-sm font-medium text-slate-700">
-            Shared Clipboard
-          </label>
 
           <textarea
             value={text}
             onChange={(e) => handleChange(e.target.value)}
             placeholder="Paste or type text here..."
             className="h-[420px] w-full rounded-2xl border border-slate-200 bg-slate-100 p-4 text-base text-slate-900 outline-none transition focus:border-emerald-400 focus:bg-white"
-          />
+          /> */}
+
+          <div className="mb-4">
+            <label className="text-xl font-medium text-slate-700">
+              Shared Clipboard
+            </label>
+
+            <div className="relative mt-3">
+              <div className="absolute right-4 top-4 z-10 flex items-center gap-2">
+                
+
+                <button
+                  onClick={handleCopyClipboardContent}
+                  className="rounded-xl  border-slate-100 bg-white p-2.5 text-slate-700 transition hover:bg-emerald-50 hover:text-emerald-600"
+                  title="Copy Clipboard"
+                >
+                  <LuCopy size={18} />
+                </button>
+
+                <button
+                  onClick={handleClear}
+                  className="rounded-xl  border-slate-100 bg-white p-2.5 text-slate-700 transition hover:bg-rose-50 hover:text-rose-600"
+                  title="Clear Clipboard"
+                >
+                  <MdRefresh size={18} />
+                </button>
+              </div>
+
+              <textarea
+                value={text}
+                onChange={(e) => handleChange(e.target.value)}
+                placeholder="Paste or type text here..."
+                className="h-[420px] w-full rounded-2xl border border-slate-200 px-4 py-5 text-base text-slate-900 outline-none transition focus:border-emerald-400 focus:bg-white"
+              />
+            </div>
+          </div>
 
           <p className="mt-3 text-sm text-slate-500">
             Anything typed here updates everyone in the room instantly.
