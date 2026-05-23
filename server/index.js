@@ -5,7 +5,10 @@ const crypto = require("crypto");
 const server = http.createServer();
 const io = new Server(server, {
   cors: {
-    origin: "http://localhost:3000",
+    origin: [
+      "http://localhost:3000",
+      "https://liveclipboard.vercel.app",
+    ],
     methods: ["GET", "POST"],
   },
 });
@@ -93,6 +96,7 @@ io.on("connection", (socket) => {
   });
 });
 
-server.listen(3001, () => {
+server.listen(process.env.PORT || 3001, () => {
   console.log("Socket server running");
+  console.log(`Socket server running on port ${PORT}`);
 });
