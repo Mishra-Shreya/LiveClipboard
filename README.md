@@ -177,14 +177,15 @@ LiveClipboard/
   - Image support
   - File sharing
   - Session passwords
+  - QR code room joining
   - End-to-end encryption
+  - Dark mode
+  - Presence indicators
+  - Collaborative editing
+  - Clipboard history
 
-## Future Improvements
+## Conclusion
 
-- Realtime image sharing
-- Clipboard history
-- QR code room joining
-- Mobile PWA support
-- Dark mode
-- Presence indicators
-- Collaborative editing
+I will be happy to answer any questions that you may have, and if you want to lend a hand with the LiveClipboard then please feel free to submit an issue and/or pull request 🙂
+
+If you liked my work, don’t forget to ⭐ star the repo to show your support.
