@@ -96,7 +96,8 @@ io.on("connection", (socket) => {
   });
 });
 
-server.listen(process.env.PORT || 3001, () => {
-  console.log("Socket server running");
+const PORT = process.env.PORT || 3001;
+
+server.listen(PORT, () => {
   console.log(`Socket server running on port ${PORT}`);
 });
